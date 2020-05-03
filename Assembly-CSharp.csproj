@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Balle.cs" />
+    <Compile Include="Assets\Script\Change.cs" />
     <Compile Include="Assets\Script\Finish.cs" />
     <Compile Include="Assets\Script\Mouvement.cs" />
     <Reference Include="Unity.Timeline.Editor">
