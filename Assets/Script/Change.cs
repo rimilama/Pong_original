@@ -12,19 +12,14 @@ public class Change : MonoBehaviour
     public Sprite Back_recent;
     public GameObject Back;
 
-    public GameObject top;
-    Vector3 pos_top;
-    public GameObject bottom;
-    Vector3 pos_bot;
-    float Deplacement = 0.407697f;
+    public GameObject Chara1;
+    public GameObject Chara2;
 
-    bool state = true;
+    public bool state = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        pos_top = top.transform.position;
-        pos_bot = bottom.transform.position;
     }
 
     // Update is called once per frame
@@ -36,19 +31,15 @@ public class Change : MonoBehaviour
             {
                 Back.GetComponent<SpriteRenderer>().sprite = Back_recent;
                 Balle.GetComponent<SpriteRenderer>().sprite = Balle_recent;
-                pos_top.y -= Deplacement;
-                pos_bot.y += Deplacement;
-                top.transform.position = pos_top;
-                bottom.transform.position = pos_bot;
+                Chara1.active = true;
+                Chara2.active = true;
                 state = false;
             }else
             {
                 Back.GetComponent<SpriteRenderer>().sprite = Back_old;
                 Balle.GetComponent<SpriteRenderer>().sprite = Balle_old;
-                pos_top.y += Deplacement;
-                pos_bot.y -= Deplacement;
-                top.transform.position = pos_top;
-                bottom.transform.position = pos_bot;
+                Chara1.active = false;
+                Chara2.active = false;
                 state = true;
             }
         }

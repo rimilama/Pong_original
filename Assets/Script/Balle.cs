@@ -12,13 +12,21 @@ public class Balle : MonoBehaviour
     public Text TextscoreP1;
     public Text TextscoreP2;
 
-    public AudioClip player_sound;
-    public AudioClip goal_sound;
-    public AudioClip wall_sound;
+    public AudioClip player_sound_new;
+    public AudioClip player_sound_old;
+    AudioClip player_sound;
+    public AudioClip goal_sound_new;
+    public AudioClip goal_sound_old;
+    AudioClip goal_sound;
+    public AudioClip wall_sound_old;
+    public AudioClip wall_sound_new;
+    AudioClip wall_sound;
     AudioSource audioSource;
 
     public GameObject ball_1;
     public GameObject ball_2;
+
+    public GameObject Change;
     
 
 
@@ -37,6 +45,18 @@ public class Balle : MonoBehaviour
         Vector3 forward_2 = ball_1.transform.position;
         ball_1.transform.position = forward_1;
         ball_2.transform.position = forward_2;
+        if(Change.GetComponent<Change>().state == false)
+        {
+            player_sound = player_sound_new;
+            goal_sound = goal_sound_new;
+            wall_sound = wall_sound_new;
+        }
+        else
+        {
+            player_sound = player_sound_old;
+            goal_sound = goal_sound_old;
+            wall_sound = wall_sound_old;
+        }
     }
 
     private void traine()
